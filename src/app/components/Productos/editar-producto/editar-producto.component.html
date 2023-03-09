@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row-mt-10">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" >
+                <div class="form-group">
+                    <label for="nombre">Nombre del Producto</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="producto.nombreProducto" required>
+                </div>
+               <div class="form-group">
+                    <label for="subscripcion">Imagen</label>
+                    <input type="url" class="form-control" id="logo" name="logo" [(ngModel)]="producto.imagen">
+                </div>
+                <div class="form-group">
+                    <label for="pago">Cantidad</label>
+                    <input type="number" class="form-control" id="telefono" name="telefono" [(ngModel)]="producto.cantidad" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Precio</label>
+                    <input type="number" class="form-control" id="email" name="email" [(ngModel)]="producto.precio" required>
+                </div>
+                <div class="form-group" style="margin-top: 20px;">
+                    <label>Eliege un Provedor:</label>
+                    <select id="roles" name="roles" [(ngModel)]="producto.nombreProvedor" required>
+                    <option *ngFor="let prove of proveedores" >{{prove.nombreProvedor}}</option>
+                    </select>
+                </div>
+                <button class="btn btn-outline-success btn-block" id="BootonCrear" [disabled]="!f.valid">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

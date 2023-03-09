@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row-mt-10">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre de Proveedor</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="proveedor.nombreProvedor" required>
+                </div>
+               <div class="form-group">
+                    <label for="subscripcion">Logo</label>
+                    <input type="text" class="form-control" id="logo" name="logo" [(ngModel)]="proveedor.logo" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Telefono</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" [(ngModel)]="proveedor.telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="proveedor.email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Pais</label>
+                    <input type="text" class="form-control" id="pais" name="pais" [(ngModel)]="proveedor.pais" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Estado</label>
+                    <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="proveedor.estado" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Municipio</label>
+                    <input type="text" class="form-control" id="municipio" name="municipio" [(ngModel)]="proveedor.municipio" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Calle</label>
+                    <input type="text" class="form-control" id="calle" name="calle" [(ngModel)]="proveedor.calle" required>
+                </div>
+                <button class="btn btn-outline-success btn-block" id="BootonCrear" [disabled]="!f.valid">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

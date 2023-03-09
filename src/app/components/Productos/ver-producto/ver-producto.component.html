@@ -1,0 +1,41 @@
+<h1 style="text-align: center;">Lista de Productos</h1>
+<div class="search" style="display: flex;">
+  <div class="inputbox">
+    <input required="required" type="text" class="input" name="text"
+    name="filterProductos" [(ngModel)]="filterProductos">
+    <span>Buscar Producto</span>
+    <i></i>
+  </div>
+  <button class="cssbuttons-io" *ngIf="isAdmin" routerLink="/producto/nuevo"
+    id="botonNuevo">
+    <span><i class="fa-solid fa-circle-plus" style="margin-right: 5px;"></i>
+      Nuevo</span>
+  </button>
+</div>
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">Imagen</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Provedor</th>
+      <th scope="col">Precio</th>
+      <th scope="col" *ngIf="isAdmin"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos | filter:filterProductos">
+      <td><img [src]="producto.imagen" class="card-img-top" width="60px"
+          height="70px"></td>
+      <td>{{producto.nombreProducto}}</td>
+      <td id="stock{{producto.id}}">{{producto.cantidad}}</td>
+      <td>{{producto.nombreProvedor}}</td>
+      <td>{{producto.precio}}</td>
+      <td *ngIf="isAdmin"><button class="btn btn-outline-warning"
+          routerLink="/producto/editar/{{producto.id}}" style="margin-right:
+          4px;"><i class="fa-solid fa-pen-to-square"></i> Editar</button>
+        <button class="btn btn-outline-danger" (click)="onDelete(producto.id)"><i
+            class="fa-solid fa-trash"></i> Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>

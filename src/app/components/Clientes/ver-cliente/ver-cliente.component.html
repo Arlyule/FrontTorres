@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col" *ngIf="isAdmin">id</th>
+        <th scope="col" >nombre</th>
+        <th scope="col">subscripcion</th>
+        <th scope="col">precio</th>
+        <th scope="col" *ngIf="isAdmin">Editar</th>
+        <th scope="col" *ngIf="isAdmin">Borrar</th>
+        <th *ngIf="isAdmin"><button type="button" class="btn btn-primary btn-lg" routerLink="/cliente/nuevo" id="botonNuevo"><i class="fa-solid fa-circle-plus"></i>Nuevo</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td *ngIf="isAdmin">{{cliente.id}}</td>
+        <td>{{cliente.nombre}}</td>
+        <td></td>
+        <td></td>
+        <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/cliente/editar/{{cliente.id}}"><i class="fa-solid fa-pen-to-square"></i> Editar</button></td>
+        <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="borrar(cliente.id)"><i class="fa-solid fa-trash"></i> Eliminar</button></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+ 

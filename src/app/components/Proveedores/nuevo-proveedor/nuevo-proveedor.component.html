@@ -1,0 +1,42 @@
+
+<div class="container">
+    <div class="row-mt-10">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm" >
+                <div class="form-group">
+                    <label for="nombre">Nombre de Proveedor</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombreProvedor" required>
+                </div>
+               <div class="form-group">
+                    <label for="subscripcion">Logo</label>
+                    <input type="url" class="form-control" id="logo" name="logo" [(ngModel)]="logo">
+                </div>
+                <div class="form-group">
+                    <label for="pago">Telefono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Pais</label>
+                    <input type="text" class="form-control" id="pais" name="pais" [(ngModel)]="pais" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Estado</label>
+                    <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="estado" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Municipio</label>
+                    <input type="text" class="form-control" id="municipio" name="municipio" [(ngModel)]="municipio" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Calle</label>
+                    <input type="text" class="form-control" id="calle" name="calle" [(ngModel)]="calle" required>
+                </div>
+                <button class="btn btn-outline-success btn-block" id="BootonCrear" [disabled]="!f.valid"> Crear</button>
+            </form>
+        </div>
+    </div>
+</div>

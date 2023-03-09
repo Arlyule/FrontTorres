@@ -1,0 +1,59 @@
+
+<h1 style="text-align: center;">Detalle Proveedor</h1>
+<div id="contenido">
+<div class="container" *ngIf="proveedor">
+
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header text-center">
+                    Detail
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><img [src]="proveedor.logo" class="card-img-top" width="100px" height="150px"></li>
+                        <li class="list-group-item"><b>Nombre: </b>{{proveedor.nombreProvedor}}</li>
+                        <li class="list-group-item"><b>Telefono: </b>{{proveedor.telefono}}</li>
+                        <li class="list-group-item"><b>Email: </b>{{proveedor.email}}</li>
+                        <li class="list-group-item"><b>Pais: </b>{{proveedor.pais}}</li>
+                        <li class="list-group-item"><b>Estado: </b>{{proveedor.estado}}</li>
+                        <li class="list-group-item"><b>Minicipio: </b>{{proveedor.municipio}}</li>
+                        <li class="list-group-item"><b>Calle: </b>{{proveedor.calle}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 5%; margin-bottom: 8%;">
+<h3 style="text-align: center;">Lista de Productos</h3> 
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Imagen</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Provedor</th>
+        <th scope="col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td><img [src]="producto.imagen" class="card-img-top" width="60px" height="70px"></td>
+        <td>{{producto.nombreProducto}}</td>
+        <td id="stock{{producto.id}}">{{producto.cantidad}}</td>
+        <td>{{producto.nombreProvedor}}</td>
+        <td>{{producto.precio}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<!--
+<div style="margin-top: 2%; ">
+    <button class="btn btn-outline-primary w-25" routerLink="/proveedor/lista">
+        <i class="fas fa-arrow-alt-circle-left"></i> Back
+    </button>
+</div>-->

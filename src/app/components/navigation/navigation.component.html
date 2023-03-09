@@ -1,0 +1,38 @@
+<nav class="header">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/img/logo.png" alt="nombre de la imagen" width="100" height="60">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a *ngIf="isLogged" class="nav-link" routerLink="/proveedor/lista">Proveedores</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="isLogged" class="nav-link" routerLink="/producto/lista">Productos</a>
+          </li>
+          <li *ngIf="isLogged && isAdmin" class="nav-item">
+            <a class="nav-link" routerLink="/register">RegistrarUsuario</a>
+          </li>
+          <li class="nav-item">
+            <button type="button" *ngIf="!isLogged" class="btn btn-outline-dark" routerLink="/login"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+          <li class="nav-item">
+            <span *ngIf="isLogged" class="navbar-text me-3">
+              Usuario: {{userName}}
+            </span>
+          </li>
+          <li class="nav-item">
+            <button type="button" *ngIf="isLogged" class="btn btn-outline-dark" (click)="logOut()"><i class="bi bi-box-arrow-in-left"></i> LogOut</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</nav>

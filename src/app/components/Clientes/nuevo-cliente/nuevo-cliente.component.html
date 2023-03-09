@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row-mt-10">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+                </div>
+               <!--<div class="form-group">
+                    <label for="subscripcion">Subscripcion</label>
+                    <input type="text" class="form-control" id="" name="" [(ngModel)]="" required>
+                </div>
+                <div class="form-group">
+                    <label for="pago">Pago</label>
+                    <input type="text" class="form-control" id="" name="" [(ngModel)]="" required>
+                </div>-->
+                <button class="btn btn-outline-success btn-block" id="BootonCrear" [disabled]="!f.valid"> Crear</button>
+            </form>
+        </div>
+    </div>
+</div>
